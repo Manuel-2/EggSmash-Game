@@ -94,6 +94,7 @@ public class PlayerInputs : MonoBehaviour
 
     void PlayerAcction(Actions action)
     {
+        //ten en cuenta que primero estas cambiando el turno del jugador y despues efectuando el movimiento
         turn = !turn;
 
             switch (currentState)
@@ -118,6 +119,7 @@ public class PlayerInputs : MonoBehaviour
                         case Actions.jo:
                         //game over XD
                         inGame = false;
+                        Debug.Log("juego terminado");
                             break;
                     }
                     break;
@@ -127,5 +129,7 @@ public class PlayerInputs : MonoBehaviour
                     break;
 
             }
+        Debug.Log(action);
+        Debug.Log(turn);
     }
 }

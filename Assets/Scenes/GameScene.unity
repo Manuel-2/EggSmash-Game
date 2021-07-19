@@ -249,5 +249,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83576efb2c0dbf6489ff4714ca3750bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player1Inputs: 
-  player2Inputs: 
+  player1Inputs: 610000007700000064000000
+  player2Inputs: 140100001101000013010000
