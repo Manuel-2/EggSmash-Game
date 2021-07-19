@@ -16,7 +16,6 @@ public class PlayerInputs : MonoBehaviour
     private Actions currentState;
     enum Actions
     {
-        zero,
         jo,
         re,
         ev
@@ -27,7 +26,7 @@ public class PlayerInputs : MonoBehaviour
     {
         inGame = true;
         turn = true;
-        currentState = Actions.zero;
+        currentState = Actions.jo;
     }
 
     // Update is called once per frame
@@ -36,48 +35,67 @@ public class PlayerInputs : MonoBehaviour
 
         if (inGame)
         {
-            //TODO: segun el ultimo movimento no puedes hacer ciertas acciones, por ejemplo en un Jo no tiene sendo un Ev
-            if (turn)
+            switch (currentState)
             {
-                if (Input.GetKeyDown(player1Inputs[0]))
-                {
+                case Actions.jo:
+                    if (turn)
+                    {
+                        if (Input.GetKeyDown(player1Inputs[0]))
+                        {
+                            PlayerAcction(Actions.jo);
+                        }
+                        else if (Input.GetKeyDown(player1Inputs[1]))
+                        {
+                            PlayerAcction(Actions.re);
+                        }
+                    }
+                    else
+                    {
+                        if (Input.GetKeyDown(player2Inputs[0]))
+                        {
+                            PlayerAcction(Actions.jo);
+                        }
+                        else if (Input.GetKeyDown(player2Inputs[1]))
+                        {
+                            PlayerAcction(Actions.re);
+                        }
+                    }
+                    break;
+                case Actions.re:
+                    if (turn)
+                    {
+                        if (Input.GetKeyDown(player1Inputs[2]))
+                        {
+                            PlayerAcction(Actions.ev);
+                        }
+                        else if (Input.GetKeyDown(player1Inputs[0]))
+                        {
+                            PlayerAcction(Actions.jo);
+                        }
+                    }
+                    else
+                    {
+                        if (Input.GetKeyDown(player2Inputs[2]))
+                        {
+                            PlayerAcction(Actions.ev);
+                        }
+                        else if (Input.GetKeyDown(player2Inputs[0]))
+                        {
+                            PlayerAcction(Actions.jo);
+                        }
+                    }
+                    break;
+                case Actions.ev:
                     PlayerAcction(Actions.jo);
-                }
-                else if (Input.GetKeyDown(player1Inputs[1]))
-                {
-                    PlayerAcction(Actions.re);
-                }
-                else if (Input.GetKeyDown(player1Inputs[2]))
-                {
-                    PlayerAcction(Actions.ev);
-                }
-            }
-            else
-            {
-                if (Input.GetKeyDown(player2Inputs[0]))
-                {
-                    PlayerAcction(Actions.jo);
-                }
-                else if (Input.GetKeyDown(player2Inputs[1]))
-                {
-                    PlayerAcction(Actions.re);
-                }
-                else if (Input.GetKeyDown(player2Inputs[2]))
-                {
-                    PlayerAcction(Actions.ev);
-                }
+                    break;
             }
         }
     }
 
     void PlayerAcction(Actions action)
     {
-        if(currentState == Actions.zero)
-        {
-            currentState = action;
-        }
-        else
-        {
+        turn = !turn;
+
             switch (currentState)
             {
                 case Actions.jo:
@@ -103,11 +121,10 @@ public class PlayerInputs : MonoBehaviour
                     }
                     break;
                 case Actions.ev:
-                    // caso especial cuando un jugador usa ev, es como omitir su sig turno, si el otro jugador esquiva el Re y usa ev lo que te queda por hacer es devolver "tason"
-                    currentState = Actions.zero;
+                    // caso especial cuando un jugador usa ev, es como omitir su sig turno y vuelve a jo el cual es el estado por defecto
+                    currentState = Actions.jo;
                     break;
 
             }
-        }
     }
 }
