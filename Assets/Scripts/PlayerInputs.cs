@@ -116,7 +116,8 @@ public class PlayerInputs : MonoBehaviour
                             currentState = Actions.ev;
                             break;
                         case Actions.jo:
-                            //game over XD
+                        //game over XD
+                        inGame = false;
                             break;
                     }
                     break;
