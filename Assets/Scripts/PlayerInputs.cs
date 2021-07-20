@@ -20,6 +20,10 @@ public class PlayerInputs : MonoBehaviour
     // true = player1 turn, false = player2 turn
     bool turn;
 
+    // es verdadero si un jugador perdio
+    bool gameOver;
+
+    // es falso si un jugador efectua un movimiento
     bool inGame;
 
     private Actions currentState;
@@ -33,6 +37,7 @@ public class PlayerInputs : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gameOver = false;
         inGame = true;
         turn = true;
         currentState = Actions.jo;
@@ -42,7 +47,7 @@ public class PlayerInputs : MonoBehaviour
     void Update()
     {
         //Todo: el segundo jugador no puede efectuar sus moviminetos hasta que la animaciones del jugador 1 terminen
-        if (inGame)
+        if (inGame && gameOver == false)
         {
             switch (currentState)
             {
@@ -126,8 +131,7 @@ public class PlayerInputs : MonoBehaviour
                             break;
                         case Actions.jo:
                         //game over XD
-                        inGame = false;
-                        Debug.Log("juego terminado");
+                        GameOver();
                             break;
                     }
                     break;
@@ -140,7 +144,7 @@ public class PlayerInputs : MonoBehaviour
 
             }
 
-        turn = !turn;
+        //turn = !turn;
     }
 
     private void MovePlayer(Actions action)
@@ -178,6 +182,23 @@ public class PlayerInputs : MonoBehaviour
                 }
                 break;
         }
+        // con esto en false se dejan de tomar en cuenta los inputs de ambos jugadores asta que el turno del jugador termine(al final de la animacion de su movimiento)
+        inGame = false;
+    }
+
+    private void GameOver()
+    {
+        gameOver = true;
+        //esto es true porque al finalizar el turno del jugador se invierte y este metodo se ejecuta antes, por lo cual esto revierte  el estado revertido
+        inGame = true;
+        Debug.Log("juego terminado");
+    }
+
+
+    public void nextTurn()
+    {
+        inGame = true;
+        turn = !turn;
     }
 
 }

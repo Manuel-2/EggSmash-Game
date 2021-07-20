@@ -391,6 +391,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 8940737957740369523, guid: b767533a5e0668b4a873faae8bad74ee, type: 3}
+      propertyPath: playerInputs
+      value: 
+      objectReference: {fileID: 1812657889}
+    - target: {fileID: 8940737957740369523, guid: b767533a5e0668b4a873faae8bad74ee, type: 3}
       propertyPath: blockTransform
       value: 
       objectReference: {fileID: 1051467793}
@@ -411,6 +415,10 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8940737957740369534, guid: b767533a5e0668b4a873faae8bad74ee, type: 3}
+      propertyPath: m_LocalScale.x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8940737957740369534, guid: b767533a5e0668b4a873faae8bad74ee, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7.48
       objectReference: {fileID: 0}
@@ -424,7 +432,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8940737957740369534, guid: b767533a5e0668b4a873faae8bad74ee, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8940737957740369534, guid: b767533a5e0668b4a873faae8bad74ee, type: 3}
       propertyPath: m_LocalRotation.x
@@ -436,7 +444,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8940737957740369534, guid: b767533a5e0668b4a873faae8bad74ee, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8940737957740369534, guid: b767533a5e0668b4a873faae8bad74ee, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -448,7 +456,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8940737957740369534, guid: b767533a5e0668b4a873faae8bad74ee, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 180
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8940737957740369535, guid: b767533a5e0668b4a873faae8bad74ee, type: 3}
       propertyPath: m_Name
@@ -523,6 +531,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8940737957740369523, guid: b767533a5e0668b4a873faae8bad74ee, type: 3}
+      propertyPath: playerInputs
+      value: 
+      objectReference: {fileID: 1812657889}
     - target: {fileID: 8940737957740369523, guid: b767533a5e0668b4a873faae8bad74ee, type: 3}
       propertyPath: blockTransform
       value: 
