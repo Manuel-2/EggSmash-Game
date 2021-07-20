@@ -17,6 +17,10 @@ public class PlayerInputs : MonoBehaviour
     [SerializeField] string reTrigger;
     [SerializeField] string evTrigger;
 
+    [Header("Background Colors")]
+    [SerializeField] Camera camera;
+    [SerializeField] Color[] colors;
+
     // true = player1 turn, false = player2 turn
     bool turn;
 
@@ -201,6 +205,17 @@ public class PlayerInputs : MonoBehaviour
     {
         inGame = true;
         turn = !turn;
+
+        //TODO: change the background color
+        if (turn)
+        {
+            camera.backgroundColor = colors[0];
+        }
+        else
+        {
+            camera.backgroundColor = colors[1];
+        }
+
     }
 
 }
