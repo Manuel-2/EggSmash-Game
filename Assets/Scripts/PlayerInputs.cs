@@ -21,6 +21,8 @@ public class PlayerInputs : MonoBehaviour
     [SerializeField] Camera camera;
     [SerializeField] Color[] colors;
 
+    [SerializeField] InterfaceController interfaceController;
+
     // true = player1 turn, false = player2 turn
     bool turn;
 
@@ -196,6 +198,10 @@ public class PlayerInputs : MonoBehaviour
         gameOver = true;
         //esto es true porque al finalizar el turno del jugador se invierte y este metodo se ejecuta antes, por lo cual esto revierte  el estado revertido
         inGame = true;
+
+        //activar la panatalla de gameOver
+        interfaceController.showGameOverInterface(!turn);
+        Debug.Log(turn);
 
         Debug.Log("juego terminado");
     }
