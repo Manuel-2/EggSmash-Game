@@ -8,6 +8,15 @@ public class PlayerInputs : MonoBehaviour
     [SerializeField] KeyCode[] player1Inputs;
     [SerializeField] KeyCode[] player2Inputs;
 
+    [Header("Player Animators")]
+    [SerializeField] Animator player1Anim;
+    [SerializeField] Animator player2Anim;
+
+    [Header("Movement Triggers")]
+    [SerializeField] string joTrigger;
+    [SerializeField] string reTrigger;
+    [SerializeField] string evTrigger;
+
     // true = player1 turn, false = player2 turn
     bool turn;
 
@@ -32,7 +41,7 @@ public class PlayerInputs : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        //Todo: el segundo jugador no puede efectuar sus moviminetos hasta que la animaciones del jugador 1 terminen
         if (inGame)
         {
             switch (currentState)
@@ -94,8 +103,7 @@ public class PlayerInputs : MonoBehaviour
 
     void PlayerAcction(Actions action)
     {
-        //ten en cuenta que primero estas cambiando el turno del jugador y despues efectuando el movimiento
-        turn = !turn;
+        MovePlayer(action);
 
             switch (currentState)
             {
@@ -125,11 +133,51 @@ public class PlayerInputs : MonoBehaviour
                     break;
                 case Actions.ev:
                     // caso especial cuando un jugador usa ev, es como omitir su sig turno y vuelve a jo el cual es el estado por defecto
-                    currentState = Actions.jo;
+                    // ejecutar una funcion para que el player regrese el tazon
+                    //current state = Actions.jo
+                    currentState = action;
                     break;
 
             }
-        Debug.Log(action);
-        Debug.Log(turn);
+
+        turn = !turn;
     }
+
+    private void MovePlayer(Actions action)
+    {
+        switch (action)
+        {
+            case Actions.jo:
+                if (turn)
+                {
+                    player1Anim.SetTrigger(joTrigger);
+                }
+                else
+                {
+                    player2Anim.SetTrigger(joTrigger);
+                }
+                break;
+            case Actions.re:
+                if (turn)
+                {
+                    player1Anim.SetTrigger(reTrigger);
+                }
+                else
+                {
+                    player2Anim.SetTrigger(reTrigger);
+                }
+                break;
+            case Actions.ev:
+                if (turn)
+                {
+                    player1Anim.SetTrigger(evTrigger);
+                }
+                else
+                {
+                    player2Anim.SetTrigger(evTrigger);
+                }
+                break;
+        }
+    }
+
 }
