@@ -26,8 +26,8 @@ public class PlayerInputs : MonoBehaviour
     // es falso si un jugador efectua un movimiento
     bool inGame;
 
-    private Actions currentState;
-    enum Actions
+    public Actions currentState { get; private set; }
+    public enum Actions
     {
         jo,
         re,
@@ -188,9 +188,11 @@ public class PlayerInputs : MonoBehaviour
 
     private void GameOver()
     {
+        //cuando esto es verdadero el juego deja de leer los inputs de los jugadores
         gameOver = true;
         //esto es true porque al finalizar el turno del jugador se invierte y este metodo se ejecuta antes, por lo cual esto revierte  el estado revertido
         inGame = true;
+
         Debug.Log("juego terminado");
     }
 

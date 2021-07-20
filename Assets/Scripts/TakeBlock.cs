@@ -24,6 +24,9 @@ public class TakeBlock : MonoBehaviour
 
     public void ReturnBlock()
     {
-        blockTransform.position = blockOrignalPosition;
+        if(playerInputs.currentState != PlayerInputs.Actions.re)
+        {
+            blockTransform.position = blockOrignalPosition;
+        }
     }
 }
