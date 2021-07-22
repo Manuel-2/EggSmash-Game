@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerInputs : MonoBehaviour
 {
@@ -36,6 +37,10 @@ public class PlayerInputs : MonoBehaviour
     [SerializeField] float initialReactionTime;
     float player1TimeLeft;
     float player2TimeLeft;
+    [Header("players left time UI")]
+    [SerializeField] Slider player1TimeBar;
+    [SerializeField] Slider player2TimeBar;
+
 
     public Actions currentState { get; private set; }
     public enum Actions
@@ -239,7 +244,7 @@ public class PlayerInputs : MonoBehaviour
             player1TimeLeft -= Time.deltaTime;
             player2TimeLeft += Time.deltaTime;
 
-            if(player1TimeLeft <= 0 && player2TimeLeft >= initialReactionTime)
+            if (player1TimeLeft <= 0 && player2TimeLeft >= initialReactionTime)
             {
                 GameOver();
             }
@@ -255,6 +260,9 @@ public class PlayerInputs : MonoBehaviour
                 GameOver();
             }
         }
+
+        player1TimeBar.value = player1TimeLeft;
+        player2TimeBar.value = player2TimeLeft;
     }
 
 }
