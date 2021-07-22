@@ -32,6 +32,11 @@ public class PlayerInputs : MonoBehaviour
     // es falso si un jugador efectua un movimiento
     bool inGame;
 
+    [Header("players time to make a move")]
+    [SerializeField] float initialReactionTime;
+    float player1TimeLeft;
+    float player2TimeLeft;
+
     public Actions currentState { get; private set; }
     public enum Actions
     {
@@ -47,14 +52,17 @@ public class PlayerInputs : MonoBehaviour
         inGame = true;
         turn = true;
         currentState = Actions.jo;
+
+        player1TimeLeft = player2TimeLeft = initialReactionTime;
     }
 
     // Update is called once per frame
     void Update()
     {
-        //Todo: el segundo jugador no puede efectuar sus moviminetos hasta que la animaciones del jugador 1 terminen
+
         if (inGame && gameOver == false)
         {
+            RemovePlayerTimeLeft();
             switch (currentState)
             {
                 case Actions.jo:
@@ -212,7 +220,7 @@ public class PlayerInputs : MonoBehaviour
         inGame = true;
         turn = !turn;
 
-        //TODO: change the background color
+        
         if (turn)
         {
             camera.backgroundColor = colors[0];
@@ -222,6 +230,31 @@ public class PlayerInputs : MonoBehaviour
             camera.backgroundColor = colors[1];
         }
 
+    }
+
+    public void RemovePlayerTimeLeft()
+    {
+        if (turn)
+        {
+            player1TimeLeft -= Time.deltaTime;
+            player2TimeLeft += Time.deltaTime;
+
+            if(player1TimeLeft <= 0 && player2TimeLeft >= initialReactionTime)
+            {
+                GameOver();
+            }
+
+        }
+        else
+        {
+            player1TimeLeft += Time.deltaTime;
+            player2TimeLeft -= Time.deltaTime;
+
+            if (player2TimeLeft <= 0 && player1TimeLeft >= initialReactionTime)
+            {
+                GameOver();
+            }
+        }
     }
 
 }

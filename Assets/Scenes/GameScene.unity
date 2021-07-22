@@ -1845,6 +1845,7 @@ MonoBehaviour:
   - {r: 1, g: 0.7529412, b: 0.7411765, a: 1}
   - {r: 0.7411765, g: 0.8980392, b: 1, a: 0}
   interfaceController: {fileID: 41951300}
+  initialReactionTime: 6
 --- !u!95 &1837040839 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 8940737957740369532, guid: b767533a5e0668b4a873faae8bad74ee, type: 3}
