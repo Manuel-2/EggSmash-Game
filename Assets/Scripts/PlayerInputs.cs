@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class PlayerInputs : MonoBehaviour
 {
+    public static PlayerInputs sharedInstance;
+
     [Header("Inputs")]
     [SerializeField] KeyCode[] player1Inputs;
     [SerializeField] KeyCode[] player2Inputs;
@@ -50,15 +52,18 @@ public class PlayerInputs : MonoBehaviour
         ev
     }
 
+    private void Awake()
+    {
+        if(sharedInstance == null)
+        {
+            sharedInstance = this;
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        gameOver = false;
-        inGame = true;
-        turn = true;
-        currentState = Actions.jo;
-
-        player1TimeLeft = player2TimeLeft = initialReactionTime;
+        inGame = false;
     }
 
     // Update is called once per frame
@@ -263,6 +268,16 @@ public class PlayerInputs : MonoBehaviour
 
         player1TimeBar.value = player1TimeLeft;
         player2TimeBar.value = player2TimeLeft;
+    }
+
+    public void StartGame()
+    {
+        gameOver = false;
+        inGame = true;
+        turn = true;
+        currentState = Actions.jo;
+
+        player1TimeLeft = player2TimeLeft = initialReactionTime;
     }
 
 }
