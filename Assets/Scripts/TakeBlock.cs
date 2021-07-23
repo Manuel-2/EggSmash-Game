@@ -18,7 +18,7 @@ public class TakeBlock : MonoBehaviour
 
     public void GrabBlock()
     {
-        //agarrar el objeto block y colocarlo en la posicion del hijo "TakePoint" del jugador actual
+        //TODO: hacer que el bloque sea un hijo del jugador
         blockTransform.position = Hand.position;
     }
 
