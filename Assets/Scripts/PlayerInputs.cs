@@ -20,10 +20,13 @@ public class PlayerInputs : MonoBehaviour
     [SerializeField] string reTrigger;
     [SerializeField] string evTrigger;
 
-    [Header("Background Colors")]
-    [SerializeField] Camera camera;
-    [SerializeField] Color[] colors;
-
+    [Header("Background")]
+    [SerializeField] SpriteRenderer Background;
+    [SerializeField] Sprite[] PlayerTurnBackground;
+    [Space]
+    [SerializeField] SpriteRenderer egg;
+    [SerializeField] Sprite deadEgg;
+    [Space]
     [SerializeField] InterfaceController interfaceController;
 
     // true = player1 turn, false = player2 turn
@@ -222,6 +225,8 @@ public class PlayerInputs : MonoBehaviour
         Debug.Log(turn);
 
         Debug.Log("juego terminado");
+
+        egg.sprite = deadEgg;
     }
 
 
@@ -233,11 +238,11 @@ public class PlayerInputs : MonoBehaviour
         
         if (turn)
         {
-            camera.backgroundColor = colors[0];
+            Background.sprite = PlayerTurnBackground[0];
         }
         else
         {
-            camera.backgroundColor = colors[1];
+            Background.sprite = PlayerTurnBackground[1];
         }
 
     }
@@ -278,6 +283,9 @@ public class PlayerInputs : MonoBehaviour
         currentState = Actions.jo;
 
         player1TimeLeft = player2TimeLeft = initialReactionTime;
+
+        //colorea el fondo indicando el turno del jugador(siempre el primer turno es del jugador 1)
+        Background.sprite = PlayerTurnBackground[0];
     }
 
 }
