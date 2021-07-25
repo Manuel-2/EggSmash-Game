@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class InterfaceController : MonoBehaviour
@@ -11,6 +12,9 @@ public class InterfaceController : MonoBehaviour
     [Space]
     [SerializeField] GameObject preGameUI;
 
+    [Header("Scenes Names")]
+    [SerializeField] string mainMenuScene;
+    [SerializeField] string gameScene;
 
     public void StartGame()
     {
@@ -22,6 +26,16 @@ public class InterfaceController : MonoBehaviour
     {
         preGameUI.SetActive(false);
         inGameUI.SetActive(true);
+    }
+
+    public void RetryGame()
+    {
+        SceneManager.LoadScene(gameScene);
+    }
+
+    public void ReturnToMenu()
+    {
+        SceneManager.LoadScene(mainMenuScene);
     }
 
 
