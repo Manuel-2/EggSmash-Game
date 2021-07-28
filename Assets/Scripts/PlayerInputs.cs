@@ -222,10 +222,7 @@ public class PlayerInputs : MonoBehaviour
 
         //activar la panatalla de gameOver
         interfaceController.showGameOverInterface(!turn);
-        Debug.Log(turn);
-
-        Debug.Log("juego terminado");
-
+        
         egg.sprite = deadEgg;
     }
 
