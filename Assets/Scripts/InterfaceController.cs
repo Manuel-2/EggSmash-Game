@@ -15,7 +15,9 @@ public class InterfaceController : MonoBehaviour
     [Header("Scenes Names")]
     [SerializeField] string mainMenuScene;
     [SerializeField] string gameScene;
-
+    [Header("Sound")]
+    [SerializeField] AudioSource countDownAudioSource;
+    [SerializeField] AudioClip[] countDownClips;
     public void StartGame()
     {
         ShowInGameInterface();
@@ -56,6 +58,18 @@ public class InterfaceController : MonoBehaviour
             signs[1].SetActive(true);
         }
 
+    }
+
+    public void CountBeep()
+    {
+        countDownAudioSource.clip = countDownClips[0];
+        countDownAudioSource.Play();
+    }
+
+    public void FinalBeep()
+    {
+        countDownAudioSource.clip = countDownClips[1];
+        countDownAudioSource.Play();
     }
 
 }
