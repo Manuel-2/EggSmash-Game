@@ -24,10 +24,15 @@ public class PlayerInputs : MonoBehaviour
     [SerializeField] SpriteRenderer Background;
     [SerializeField] Sprite[] PlayerTurnBackground;
     [Space]
-    [SerializeField] SpriteRenderer egg;
-    [SerializeField] Sprite deadEgg;
+    [Header("Egg")]
+    [SerializeField] Animator eggAnim;
+    [SerializeField] string deadEggTrigger;
     [Space]
     [SerializeField] InterfaceController interfaceController;
+    [Header("Win Particles")]
+    [SerializeField] ParticleSystem winParticles;
+    [SerializeField] Transform[] exitPoints;
+
 
     // true = player1 turn, false = player2 turn
     bool turn;
@@ -222,8 +227,19 @@ public class PlayerInputs : MonoBehaviour
 
         //activar la panatalla de gameOver
         interfaceController.showGameOverInterface(!turn);
-        
-        egg.sprite = deadEgg;
+
+        eggAnim.SetTrigger(deadEggTrigger);
+
+        //activa el confeti :D
+        if (!turn)
+        {
+            winParticles.transform.position = exitPoints[0].position;
+        }
+        else
+        {
+            winParticles.transform.position = exitPoints[1].position;
+        }
+        winParticles.Play();
     }
 
 
