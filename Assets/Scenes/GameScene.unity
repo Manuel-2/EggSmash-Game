@@ -7055,10 +7055,22 @@ PrefabInstance:
       propertyPath: blockTransform
       value: 
       objectReference: {fileID: 1051467793}
+    - target: {fileID: 8940737957740369523, guid: b767533a5e0668b4a873faae8bad74ee, type: 3}
+      propertyPath: playerAudioSource
+      value: 
+      objectReference: {fileID: 1717257560}
     - target: {fileID: 8940737957740369532, guid: b767533a5e0668b4a873faae8bad74ee, type: 3}
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 1e597af6530e78447b534739f1947439, type: 2}
+    - target: {fileID: 8940737957740369533, guid: b767533a5e0668b4a873faae8bad74ee, type: 3}
+      propertyPath: m_Size.x
+      value: 11.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8940737957740369533, guid: b767533a5e0668b4a873faae8bad74ee, type: 3}
+      propertyPath: m_Size.y
+      value: 3.66
+      objectReference: {fileID: 0}
     - target: {fileID: 8940737957740369533, guid: b767533a5e0668b4a873faae8bad74ee, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -7073,6 +7085,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8940737957740369533, guid: b767533a5e0668b4a873faae8bad74ee, type: 3}
       propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8940737957740369533, guid: b767533a5e0668b4a873faae8bad74ee, type: 3}
+      propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8940737957740369534, guid: b767533a5e0668b4a873faae8bad74ee, type: 3}
@@ -7136,6 +7152,11 @@ PrefabInstance:
 --- !u!95 &1717257559 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 8940737957740369532, guid: b767533a5e0668b4a873faae8bad74ee, type: 3}
+  m_PrefabInstance: {fileID: 1717257558}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1717257560 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7952944430720671802, guid: b767533a5e0668b4a873faae8bad74ee, type: 3}
   m_PrefabInstance: {fileID: 1717257558}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1791320233
@@ -7483,6 +7504,18 @@ PrefabInstance:
       propertyPath: blockTransform
       value: 
       objectReference: {fileID: 1051467793}
+    - target: {fileID: 8940737957740369523, guid: b767533a5e0668b4a873faae8bad74ee, type: 3}
+      propertyPath: playerAudioSource
+      value: 
+      objectReference: {fileID: 8940737956340585148}
+    - target: {fileID: 8940737957740369533, guid: b767533a5e0668b4a873faae8bad74ee, type: 3}
+      propertyPath: m_Size.x
+      value: 11.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8940737957740369533, guid: b767533a5e0668b4a873faae8bad74ee, type: 3}
+      propertyPath: m_Size.y
+      value: 3.66
+      objectReference: {fileID: 0}
     - target: {fileID: 8940737957740369533, guid: b767533a5e0668b4a873faae8bad74ee, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -7497,6 +7530,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8940737957740369533, guid: b767533a5e0668b4a873faae8bad74ee, type: 3}
       propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8940737957740369533, guid: b767533a5e0668b4a873faae8bad74ee, type: 3}
+      propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8940737957740369534, guid: b767533a5e0668b4a873faae8bad74ee, type: 3}
@@ -7549,3 +7586,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b767533a5e0668b4a873faae8bad74ee, type: 3}
+--- !u!82 &8940737956340585148 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7952944430720671802, guid: b767533a5e0668b4a873faae8bad74ee, type: 3}
+  m_PrefabInstance: {fileID: 8940737956340585147}
+  m_PrefabAsset: {fileID: 0}

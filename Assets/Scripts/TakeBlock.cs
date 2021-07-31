@@ -10,6 +10,10 @@ public class TakeBlock : MonoBehaviour
 
     [SerializeField] PlayerInputs playerInputs;
 
+    [Header("Audio")]
+    [SerializeField] AudioSource playerAudioSource;
+    [SerializeField] AudioClip[] MovementSounds;
+
 
     public void EndPlayerTurn()
     {
@@ -29,4 +33,21 @@ public class TakeBlock : MonoBehaviour
             blockTransform.position = blockOrignalPosition;
         }
     }
+
+    public void JoSound()
+    {
+        playerAudioSource.clip = MovementSounds[0];
+        playerAudioSource.Play();
+    }
+    public void ReSound()
+    {
+        playerAudioSource.clip = MovementSounds[1];
+        playerAudioSource.Play();
+    }
+    public void EvSound()
+    {
+        playerAudioSource.clip = MovementSounds[2];
+        playerAudioSource.Play();
+    }
+
 }
