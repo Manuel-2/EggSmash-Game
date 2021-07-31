@@ -32,6 +32,7 @@ public class PlayerInputs : MonoBehaviour
     [Header("Win Particles")]
     [SerializeField] ParticleSystem winParticles;
     [SerializeField] Transform[] exitPoints;
+    [SerializeField] AudioSource winSound;
 
 
     // true = player1 turn, false = player2 turn
@@ -240,6 +241,7 @@ public class PlayerInputs : MonoBehaviour
             winParticles.transform.position = exitPoints[1].position;
         }
         winParticles.Play();
+        winSound.Play();
     }
 
 
