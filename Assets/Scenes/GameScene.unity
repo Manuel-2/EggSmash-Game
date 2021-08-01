@@ -380,9 +380,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 12
+  m_MaxValue: 4
   m_WholeNumbers: 0
-  m_Value: 6
+  m_Value: 2
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -6643,9 +6643,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 1
   m_MinValue: 0
-  m_MaxValue: 12
+  m_MaxValue: 4
   m_WholeNumbers: 0
-  m_Value: 6
+  m_Value: 2
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -7481,7 +7481,7 @@ MonoBehaviour:
   - {fileID: 1655072190}
   - {fileID: 1559430406}
   winSound: {fileID: 1791320235}
-  initialReactionTime: 6
+  initialReactionTime: 2
   player1TimeBar: {fileID: 1426029911}
   player2TimeBar: {fileID: 210818102}
 --- !u!95 &1837040839 stripped
