@@ -863,8 +863,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Creddits:\nGame by: Manuel Pe\xF1aloza(@Manuel2Code)\n\nGame created to
-    participate in Mejorando Ando Julio 2021"
+  m_text: "Creddits:\n\nGame by: Manuel Pe\xF1aloza(@Manuel2Code)\n\nSound effects
+    obtained from https://www.zapsplat.com"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 914a5b234a4d72e4e9db221280d4d2da, type: 2}
   m_sharedMaterial: {fileID: 381967636974975351, guid: 914a5b234a4d72e4e9db221280d4d2da, type: 2}
@@ -1795,7 +1795,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 282.25, y: -45}
+  m_AnchoredPosition: {x: 282.25, y: -42}
   m_SizeDelta: {x: 564.50867, y: 500.04868}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1079207450
