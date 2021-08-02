@@ -37,6 +37,8 @@ public class LenguageAdministrator : MonoBehaviour
         {
             currentLenguage = Lenguages.Español;
         }
+
+        UpdateTexts();
     }
 
     public void ChangeLenguage()

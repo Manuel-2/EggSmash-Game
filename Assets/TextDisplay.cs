@@ -9,7 +9,7 @@ public class TextDisplay : MonoBehaviour
 
     // 0 = English
     // 1 = Español
-    [SerializeField] [TextArea] string[] textValues;
+    [SerializeField] [TextArea(5,8)] string[] textValues;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +26,5 @@ public class TextDisplay : MonoBehaviour
         {
             textComponent.text = textValues[1];
         }
-        Debug.Log("componenete de texto actualizado");
     }
 }

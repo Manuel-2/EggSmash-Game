@@ -879,6 +879,7 @@ GameObject:
   - component: {fileID: 835373950}
   - component: {fileID: 835373952}
   - component: {fileID: 835373951}
+  - component: {fileID: 835373953}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -1002,6 +1003,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 835373949}
   m_CullTransparentMesh: 0
+--- !u!114 &835373953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 835373949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4609a36ce7747f3468ce5372dea3cdca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textComponent: {fileID: 835373951}
+  textValues:
+  - Retry
+  - Reintentar
 --- !u!1 &899063142
 GameObject:
   m_ObjectHideFlags: 0
@@ -6289,6 +6306,7 @@ GameObject:
   - component: {fileID: 1234624946}
   - component: {fileID: 1234624948}
   - component: {fileID: 1234624947}
+  - component: {fileID: 1234624949}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -6412,6 +6430,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1234624945}
   m_CullTransparentMesh: 0
+--- !u!114 &1234624949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1234624945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4609a36ce7747f3468ce5372dea3cdca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textComponent: {fileID: 1234624947}
+  textValues:
+  - Return Main Menu
+  - "Regresar al Men\xFA"
 --- !u!1 &1240656602
 GameObject:
   m_ObjectHideFlags: 0
