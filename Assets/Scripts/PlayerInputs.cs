@@ -45,7 +45,7 @@ public class PlayerInputs : MonoBehaviour
     bool inGame;
 
     [Header("players time to make a move")]
-    [SerializeField] float initialReactionTime;
+    public float initialReactionTime;
     float player1TimeLeft;
     float player2TimeLeft;
     [Header("players left time UI")]
@@ -67,6 +67,7 @@ public class PlayerInputs : MonoBehaviour
         {
             sharedInstance = this;
         }
+        initialReactionTime = PlayerPrefs.GetFloat("GameSpeed", 2f);
     }
 
     // Start is called before the first frame update
