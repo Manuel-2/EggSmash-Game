@@ -36,13 +36,13 @@ public class PlayerInputs : MonoBehaviour
 
 
     // true = player1 turn, false = player2 turn
-    bool turn;
+    public bool turn { get; private set; }
 
     // es verdadero si un jugador perdio
-    bool gameOver;
+    public bool gameOver { get; private set; }
 
     // es falso si un jugador efectua un movimiento
-    bool inGame;
+    public bool inGame { get; private set; }
 
     [Header("players time to make a move")]
     public float initialReactionTime;
@@ -79,68 +79,17 @@ public class PlayerInputs : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         if (inGame && gameOver == false)
         {
             RemovePlayerTimeLeft();
-            switch (currentState)
+            if(currentState == Actions.ev)
             {
-                case Actions.jo:
-                    if (turn)
-                    {
-                        if (Input.GetKeyDown(player1Inputs[0]))
-                        {
-                            PlayerAcction(Actions.jo);
-                        }
-                        else if (Input.GetKeyDown(player1Inputs[1]))
-                        {
-                            PlayerAcction(Actions.re);
-                        }
-                    }
-                    else
-                    {
-                        if (Input.GetKeyDown(player2Inputs[0]))
-                        {
-                            PlayerAcction(Actions.jo);
-                        }
-                        else if (Input.GetKeyDown(player2Inputs[1]))
-                        {
-                            PlayerAcction(Actions.re);
-                        }
-                    }
-                    break;
-                case Actions.re:
-                    if (turn)
-                    {
-                        if (Input.GetKeyDown(player1Inputs[2]))
-                        {
-                            PlayerAcction(Actions.ev);
-                        }
-                        else if (Input.GetKeyDown(player1Inputs[0]))
-                        {
-                            PlayerAcction(Actions.jo);
-                        }
-                    }
-                    else
-                    {
-                        if (Input.GetKeyDown(player2Inputs[2]))
-                        {
-                            PlayerAcction(Actions.ev);
-                        }
-                        else if (Input.GetKeyDown(player2Inputs[0]))
-                        {
-                            PlayerAcction(Actions.jo);
-                        }
-                    }
-                    break;
-                case Actions.ev:
-                    PlayerAcction(Actions.jo);
-                    break;
+                PlayerAcction(Actions.jo);
             }
         }
     }
 
-    void PlayerAcction(Actions action)
+    public void PlayerAcction(Actions action)
     {
         MovePlayer(action);
 
@@ -245,7 +194,7 @@ public class PlayerInputs : MonoBehaviour
         winSound.Play();
     }
 
-
+    //este metodo es llama al final de las aniamciones e invierte la variable turn
     public void nextTurn()
     {
         inGame = true;
